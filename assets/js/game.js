@@ -72,6 +72,7 @@ var fight = function(enemyName) {
     }
     };
 
+
 // function to start a new game
 var startGame = function() {
     // reset player stats
@@ -129,6 +130,7 @@ var endGame = function() {
     }
     };
 
+
 var shop = function() {
     // ask player what they'd like to do
     var shopOptionPrompt = window.prompt(
@@ -173,6 +175,7 @@ var shop = function() {
     }
     };  
 
+    
 // function to generate a random numeric value
 var randomNumber = function(min, max) {
     var value = Math.floor(Math.random() * (max - min + 1) + min);
