@@ -34,11 +34,20 @@ var fightOrSkip = function() {
 }
 
 var fight = function(enemy) {
+  var isPlayerTurn = true;
+  
+  if (Math.random() > 0.5) {
+    isPlayerTurn = false;
+  }
+
   while (playerInfo.health > 0 && enemy.health > 0) { 
-    if (fightOrSkip()) {
-      // if true, leave fight by breaking loop
-      break;
-    }
+    if (isPlayerTurn) {
+      // ask user if they'd like to fight or skip using fightOrSkip function
+      if (fightOrSkip()) {
+        // if true, leave fight by breaking loop
+        break;
+      }
+
   var damage = randomNumber(playerInfo.attack - 3, playerInfo.attack);
 
     // remove enemy's health by subtracting the amount set in the playerInfo.attack variable
@@ -77,6 +86,8 @@ var fight = function(enemy) {
       window.alert(playerInfo.name + ' still has ' + playerInfo.health + ' health left.');
     }
   }
+  isPlayerTurn = !isPlayerTurn;
+}
 };
 
 // function to start a new game
